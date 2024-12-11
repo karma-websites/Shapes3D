@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\thund\.nuget\packages\sharpgl.winforms\3.1.1\contentFiles\any\netcoreapp3.1\SharpGL.ico" />
+    <Content Remove="C:\Users\thund\.nuget\packages\sharpgl.winforms\3.1.1\contentFiles\any\netcoreapp3.1\SharpGL.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MIConvexHull" Version="1.1.19.1019" />
+    <PackageReference Include="SharpGL.WinForms" Version="3.1.1" />
+  </ItemGroup>
+
+</Project>
