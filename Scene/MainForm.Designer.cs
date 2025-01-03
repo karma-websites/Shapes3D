@@ -145,17 +145,18 @@
             openglControl1.BackColor = SystemColors.ControlLightLight;
             openglControl1.DrawFPS = true;
             openglControl1.FrameRate = 30;
-            openglControl1.Location = new Point(12, 244);
+            openglControl1.Location = new Point(12, 231);
             openglControl1.Margin = new Padding(4, 5, 4, 5);
             openglControl1.Name = "openglControl1";
-            openglControl1.OpenGLVersion = SharpGL.Version.OpenGLVersion.OpenGL2_1;
+            openglControl1.OpenGLVersion = SharpGL.Version.OpenGLVersion.OpenGL3_3;
             openglControl1.RenderContextType = SharpGL.RenderContextType.DIBSection;
             openglControl1.RenderTrigger = SharpGL.RenderTrigger.TimerBased;
-            openglControl1.Size = new Size(1210, 500);
+            openglControl1.Size = new Size(1210, 513);
             openglControl1.TabIndex = 2;
-            openglControl1.OpenGLInitialized += openglControl1_OpenGLInitialized;
-            openglControl1.OpenGLDraw += openglControl1_OpenGLDraw;
-            openglControl1.Resized += openglControl1_Resized;
+            openglControl1.TabStop = false;
+            openglControl1.OpenGLInitialized += OpenglControl1_OpenGLInitialized;
+            openglControl1.OpenGLDraw += OpenglControl1_OpenGLDraw;
+            openglControl1.Resized += OpenglControl1_Resized;
             openglControl1.SizeChanged += openglControl1_SizeChanged;
             // 
             // checkedListBox1
@@ -342,7 +343,7 @@
             groupBox3.Location = new Point(546, 0);
             groupBox3.Margin = new Padding(0);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(662, 200);
+            groupBox3.Size = new Size(662, 186);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "Куб";
@@ -471,7 +472,7 @@
             groupBox4.Location = new Point(546, 0);
             groupBox4.Margin = new Padding(0);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(662, 200);
+            groupBox4.Size = new Size(662, 186);
             groupBox4.TabIndex = 4;
             groupBox4.TabStop = false;
             groupBox4.Text = "Конус";
@@ -631,7 +632,7 @@
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             groupBox2.Location = new Point(288, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(250, 200);
+            groupBox2.Size = new Size(250, 186);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Параметры";
@@ -642,7 +643,7 @@
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(280, 200);
+            groupBox1.Size = new Size(280, 186);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Построить";
@@ -713,7 +714,7 @@
             panel1.Controls.Add(groupBox2);
             panel1.Location = new Point(9, 31);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1213, 205);
+            panel1.Size = new Size(1213, 192);
             panel1.TabIndex = 1;
             // 
             // groupBox5
@@ -734,7 +735,7 @@
             groupBox5.Location = new Point(546, 0);
             groupBox5.Margin = new Padding(0);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(662, 200);
+            groupBox5.Size = new Size(662, 186);
             groupBox5.TabIndex = 5;
             groupBox5.TabStop = false;
             groupBox5.Text = "Сцена";
@@ -842,7 +843,7 @@
             label30.TabIndex = 7;
             label30.Text = "Центр Y:";
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -854,7 +855,7 @@
             KeyPreview = true;
             MainMenuStrip = menuStrip1;
             MinimumSize = new Size(1250, 750);
-            Name = "Form1";
+            Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Моделирование объемных фигур";
             FormClosing += Form1_FormClosing;

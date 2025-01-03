@@ -63,6 +63,8 @@ namespace Scene
 
         private void ConfigureNumerics(Control parent)
         {
+            numericUpDown19.Increment = (decimal)zoomSpeed;
+
             foreach (Control control in parent.Controls)
             {
                 if (control is NumericUpDown numericUpDown)
@@ -73,18 +75,29 @@ namespace Scene
 
                     numericUpDown.Minimum = int.MinValue;
                     numericUpDown.Maximum = int.MaxValue;
-                    numericUpDown.Increment = (decimal)1.0;
+                    numericUpDown.Increment = (decimal)5.0;
 
                     numericUpDown.Enter += numericUpDown_Enter;
                     numericUpDown.KeyDown += numericUpDown_KeyDown;
                     numericUpDown.KeyUp += numericUpDown_KeyUp;
                     numericUpDown.Leave += numericUpDown_Leave;
+                    numericUpDown.MouseWheel += ScrollHandlerFunction;
                 }
                 if (control.HasChildren)
                 {
                     ConfigureNumerics(control);
                 }
             }
+        }
+
+        private void ScrollHandlerFunction(object? sender, MouseEventArgs e)
+        {
+            if (sender == null) return;
+            NumericUpDown control = (NumericUpDown)sender;
+            ((HandledMouseEventArgs)e).Handled = true;
+            decimal incr = (e.Delta > 0) ? control.Increment : -control.Increment;
+            decimal value = control.Value + incr;
+            control.Value = Math.Max(control.Minimum, Math.Min(value, control.Maximum));
         }
 
         private void SetValuesAllControls()
@@ -150,7 +163,14 @@ namespace Scene
             {
                 if (numericUpDown1.Value <= 0)
                 {
-                    numericUpDown1.Value = Math.Abs(numericUpDown1.Value);
+                    if (numericUpDown1.Value == 0)
+                    {
+                        numericUpDown1.Value = (decimal)sideCube;
+                    }
+                    else
+                    {
+                        numericUpDown1.Value = Math.Abs(numericUpDown1.Value);
+                    }
                     throw new Exception(" значение стороны куба может быть только положительным!");
                 }
                 cube.Side = (float)numericUpDown1.Value;
@@ -175,14 +195,28 @@ namespace Scene
             {
                 if (numericUpDown7.Value <= 0)
                 {
-                    numericUpDown7.Value = Math.Abs(numericUpDown7.Value);
+                    if (numericUpDown7.Value == 0)
+                    {
+                        numericUpDown7.Value = (decimal)heightCone;
+                    }
+                    else
+                    {
+                        numericUpDown7.Value = Math.Abs(numericUpDown7.Value);
+                    }
                     throw new Exception(" значение высоты конуса может быть только положительным!");
                 }
                 cone.Height = (float)numericUpDown7.Value;
 
                 if (numericUpDown8.Value <= 0)
                 {
-                    numericUpDown8.Value = Math.Abs(numericUpDown8.Value);
+                    if (numericUpDown8.Value == 0)
+                    {
+                        numericUpDown8.Value = (decimal)radiusCone;
+                    }
+                    else
+                    {
+                        numericUpDown8.Value = Math.Abs(numericUpDown8.Value);
+                    }
                     throw new Exception(" значение радиуса конуса может быть только положительным!");
                 }
                 cone.Radius = (float)numericUpDown8.Value;
@@ -218,7 +252,14 @@ namespace Scene
             {
                 if (numericUpDown19.Value <= 0)
                 {
-                    numericUpDown19.Value = Math.Abs(numericUpDown19.Value);
+                    if (numericUpDown19.Value == 0)
+                    {
+                        numericUpDown19.Value = 1;
+                    }
+                    else
+                    {
+                        numericUpDown19.Value = Math.Abs(numericUpDown19.Value);
+                    }
                     throw new Exception(" значение коэффициента масштабирования может быть только положительным!");
                 }
                 zoom = (float)numericUpDown19.Value;
@@ -238,7 +279,6 @@ namespace Scene
             gl.Enable(OpenGL.GL_LIGHTING);
             // Включение нормализации нормалей для корректного освещения после масштабирования
             gl.Enable(OpenGL.GL_NORMALIZE);
-
             // Настройка первого источника света (GL_LIGHT0)
             gl.Enable(OpenGL.GL_LIGHT0);
 
@@ -300,31 +340,36 @@ namespace Scene
             return Color.FromArgb(a, r, g, b);
         }
 
-        private void openglControl1_OpenGLInitialized(object sender, EventArgs e)
+        private void OpenglControl1_OpenGLInitialized(object sender, EventArgs e)
         {
             OpenGL gl = openglControl1.OpenGL;
             gl.ClearColor(0.98f, 0.98f, 0.98f, 1.0f);
+
             gl.Enable(OpenGL.GL_DEPTH_TEST);
+            gl.ColorMask(1, 1, 1, 1);
+
+            gl.Enable(OpenGL.GL_CULL_FACE);
+            gl.CullFace(OpenGL.GL_BACK);
 
             SetupSceneLighting(gl);
             SetupSceneMaterials(gl);
         }
 
-        private void openglControl1_Resized(object sender, EventArgs e)
+        private void OpenglControl1_Resized(object sender, EventArgs e)
         {
             float halfH = (float)openglControl1.Height / 2;
             float halfW = (float)openglControl1.Width / 2;
 
             OpenGL gl = openglControl1.OpenGL;
+            gl.Viewport(0, 0, openglControl1.Width, openglControl1.Height);
             gl.MatrixMode(OpenGL.GL_PROJECTION);
             gl.LoadIdentity();
-            gl.Viewport(0, 0, openglControl1.Width, openglControl1.Height);
             gl.Ortho(-halfW, halfW, -halfH, halfH, -halfW * 6, halfW * 6);
-            gl.LookAt(0, 0, 1, 0, 0, 0, 0, 1, 0);
             gl.MatrixMode(OpenGL.GL_MODELVIEW);
+            gl.LookAt(0, 0, 1, 0, 0, 0, 0, 1, 0);
         }
 
-        private void openglControl1_OpenGLDraw(object sender, RenderEventArgs args)
+        private void OpenglControl1_OpenGLDraw(object sender, RenderEventArgs args)
         {
             OpenGL gl = openglControl1.OpenGL;
             gl.Clear(OpenGL.GL_COLOR_BUFFER_BIT | OpenGL.GL_DEPTH_BUFFER_BIT);
@@ -351,13 +396,13 @@ namespace Scene
                     if (intersectPoints.Count > 0)
                     {
                         label13.Text = "Фигуры пересекаются";
-                        scene.DrawVertex(gl, intersectPoints);
-                        List<Vertex> vertices = Algorithms.Vertex3ToVertex(intersectPoints);
+                        Scene.DrawVertex(gl, intersectPoints);
+                        List<Vertex> vertices = Algorithm.Vertex3ToVertex(intersectPoints);
                         var triangulation = ConvexHull.Create<Vertex, TriangulatedFace>(vertices);
                         if (triangulation.Result != null)
                         {
                             List<TriangulatedFace> faces = new(triangulation.Result.Faces);
-                            scene.RenderMesh(gl, faces);
+                            Scene.RenderMesh(gl, faces);
                         }
                     }
                     else
@@ -378,7 +423,7 @@ namespace Scene
             gl.Scale(zoom, zoom, zoom);
             scene.Move(gl);
             cube.Move(gl);
-            Vector3[] verticesCube = Algorithms.ApplyTransformVertixes(gl, cube.GetVertices());
+            Vector3[] verticesCube = Algorithm.ApplyTransformVertixes(gl, cube.GetVertices());
             List<Triangle> facesCube = cube.GetFaces(verticesCube);
             gl.PopMatrix();
 
@@ -386,16 +431,16 @@ namespace Scene
             gl.Scale(zoom, zoom, zoom);
             scene.Move(gl);
             cone.Move(gl);
-            Vector3[] verticesCone = Algorithms.ApplyTransformVertixes(gl, cone.GetVertices());
+            Vector3[] verticesCone = Algorithm.ApplyTransformVertixes(gl, cone.GetVertices());
             List<Triangle> facesCone = [];
             facesCone.AddRange(cone.GetFacesBase(verticesCone));
             facesCone.AddRange(cone.GetFacesSide(verticesCone));
             gl.PopMatrix();
 
             List<Vector3> intersectPoints = [];
-            intersectPoints.AddRange(Algorithms.FindPointsIntersect(facesCube, facesCone));
-            intersectPoints.AddRange(Algorithms.FindPointsInShapes(verticesCone, verticesCube));
-            intersectPoints = Algorithms.RemoveDuplicates(intersectPoints, Algorithms.Epsilon);
+            intersectPoints.AddRange(Algorithm.FindPointsIntersect(facesCube, facesCone));
+            intersectPoints.AddRange(Algorithm.FindPointsInShapes(verticesCone, verticesCube));
+            intersectPoints = Algorithm.RemoveDuplicates(intersectPoints, Algorithm.Epsilon);
 
             return intersectPoints;
         }
@@ -408,12 +453,12 @@ namespace Scene
             scene.Move(gl);
 
             if (showSceneSystemCoord)
-                scene.DrawCoordSystem(gl, 100f);
+                Shape3D.DrawCoordSystem(gl, lengthAxis: 100f);
 
             cube.Move(gl);
 
             if (showCubeSystemCoord)
-                cube.DrawCoordSystem(gl, cube.Side);
+                Shape3D.DrawCoordSystem(gl, cube.Side);
 
             cube.Draw(gl);
 
@@ -428,12 +473,12 @@ namespace Scene
             scene.Move(gl);
 
             if (showSceneSystemCoord)
-                scene.DrawCoordSystem(gl, 100f);
+                Shape3D.DrawCoordSystem(gl, lengthAxis: 100f);
 
             cone.Move(gl);
 
             if (showConeSystemCoord)
-                cone.DrawCoordSystem(gl, cone.Height + cone.Radius);
+                Shape3D.DrawCoordSystem(gl, cone.Height + cone.Radius);
 
             cone.Draw(gl);
 
@@ -752,7 +797,11 @@ namespace Scene
 
         private void инструкцияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Руководство пользователя");
+            string text = "Приложение предназначено для моделирования трехмерных " +
+                "геометрических объектов, таких как куб и конус, " +
+                "а также для вычисления их пересечения.";
+
+            MessageBox.Show(text, "Руководство пользователя\n");
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

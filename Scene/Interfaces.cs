@@ -1,9 +1,8 @@
 ﻿using SharpGL;
 
-namespace Scene
+namespace Scene;
+
+internal interface IDraw
 {
-    internal interface IDraw
-    {
-        void Draw(OpenGL gl);
-    }
+    void Draw(OpenGL gl);
 }
