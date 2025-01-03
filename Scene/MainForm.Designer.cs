@@ -77,16 +77,6 @@
             label16 = new Label();
             label21 = new Label();
             label22 = new Label();
-            groupBox2 = new GroupBox();
-            groupBox1 = new GroupBox();
-            checkedListBox2 = new CheckedListBox();
-            menuStrip1 = new MenuStrip();
-            файлToolStripMenuItem = new ToolStripMenuItem();
-            открытьToolStripMenuItem = new ToolStripMenuItem();
-            сохранитьToolStripMenuItem = new ToolStripMenuItem();
-            инструкцияToolStripMenuItem = new ToolStripMenuItem();
-            timer1 = new System.Windows.Forms.Timer(components);
-            panel1 = new Panel();
             groupBox5 = new GroupBox();
             numericUpDown22 = new NumericUpDown();
             label12 = new Label();
@@ -100,6 +90,16 @@
             numericUpDown14 = new NumericUpDown();
             label29 = new Label();
             label30 = new Label();
+            groupBox2 = new GroupBox();
+            groupBox1 = new GroupBox();
+            checkedListBox2 = new CheckedListBox();
+            menuStrip1 = new MenuStrip();
+            файлToolStripMenuItem = new ToolStripMenuItem();
+            открытьToolStripMenuItem = new ToolStripMenuItem();
+            сохранитьToolStripMenuItem = new ToolStripMenuItem();
+            инструкцияToolStripMenuItem = new ToolStripMenuItem();
+            timer1 = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
             colorDialogCube = new ColorDialog();
             colorDialogCone = new ColorDialog();
             openFileDialog1 = new OpenFileDialog();
@@ -126,10 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown7).BeginInit();
-            groupBox2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            menuStrip1.SuspendLayout();
-            panel1.SuspendLayout();
             groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown22).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown18).BeginInit();
@@ -137,6 +133,10 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown15).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown14).BeginInit();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // openglControl1
@@ -145,13 +145,13 @@
             openglControl1.BackColor = SystemColors.ControlLightLight;
             openglControl1.DrawFPS = true;
             openglControl1.FrameRate = 30;
-            openglControl1.Location = new Point(12, 231);
-            openglControl1.Margin = new Padding(4, 5, 4, 5);
+            openglControl1.Location = new Point(10, 180);
+            openglControl1.Margin = new Padding(4);
             openglControl1.Name = "openglControl1";
             openglControl1.OpenGLVersion = SharpGL.Version.OpenGLVersion.OpenGL3_3;
             openglControl1.RenderContextType = SharpGL.RenderContextType.DIBSection;
             openglControl1.RenderTrigger = SharpGL.RenderTrigger.TimerBased;
-            openglControl1.Size = new Size(1210, 513);
+            openglControl1.Size = new Size(1063, 529);
             openglControl1.TabIndex = 2;
             openglControl1.TabStop = false;
             openglControl1.OpenGLInitialized += OpenglControl1_OpenGLInitialized;
@@ -166,9 +166,10 @@
             checkedListBox1.Font = new Font("Segoe UI", 9F);
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "куб", "конус", "сцена" });
-            checkedListBox1.Location = new Point(27, 37);
+            checkedListBox1.Location = new Point(24, 28);
+            checkedListBox1.Margin = new Padding(3, 2, 3, 2);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(195, 70);
+            checkedListBox1.Size = new Size(180, 58);
             checkedListBox1.TabIndex = 1;
             checkedListBox1.UseCompatibleTextRendering = true;
             checkedListBox1.ItemCheck += checkedListBox1_ItemCheck;
@@ -179,9 +180,10 @@
             panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(panel4);
-            panel2.Location = new Point(14, 752);
+            panel2.Location = new Point(12, 715);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1208, 48);
+            panel2.Size = new Size(1061, 44);
             panel2.TabIndex = 3;
             // 
             // panel3
@@ -190,25 +192,27 @@
             panel3.Controls.Add(buttonIntersection);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(650, 48);
+            panel3.Size = new Size(569, 44);
             panel3.TabIndex = 3;
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(258, 12);
+            label13.Location = new Point(224, 14);
             label13.Name = "label13";
-            label13.Size = new Size(58, 20);
+            label13.Size = new Size(44, 15);
             label13.TabIndex = 2;
             label13.Tag = "label13";
             label13.Text = "label13";
             // 
             // buttonIntersection
             // 
-            buttonIntersection.Location = new Point(3, 3);
+            buttonIntersection.Location = new Point(3, 7);
+            buttonIntersection.Margin = new Padding(3, 2, 3, 2);
             buttonIntersection.Name = "buttonIntersection";
-            buttonIntersection.Size = new Size(243, 38);
+            buttonIntersection.Size = new Size(215, 28);
             buttonIntersection.TabIndex = 1;
             buttonIntersection.Text = "Поиск пересечения";
             buttonIntersection.UseVisualStyleBackColor = true;
@@ -223,60 +227,62 @@
             panel4.Controls.Add(label7);
             panel4.Controls.Add(label6);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(666, 0);
+            panel4.Location = new Point(578, 0);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(542, 48);
+            panel4.Size = new Size(483, 44);
             panel4.TabIndex = 4;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(352, 12);
+            label5.Location = new Point(304, 14);
             label5.Name = "label5";
-            label5.Size = new Size(75, 20);
+            label5.Size = new Size(62, 15);
             label5.TabIndex = 5;
             label5.Text = "Масштаб:";
             // 
             // numericUpDown19
             // 
-            numericUpDown19.Location = new Point(447, 10);
+            numericUpDown19.Location = new Point(401, 12);
+            numericUpDown19.Margin = new Padding(3, 2, 3, 2);
             numericUpDown19.Name = "numericUpDown19";
-            numericUpDown19.Size = new Size(90, 27);
+            numericUpDown19.Size = new Size(79, 23);
             numericUpDown19.TabIndex = 1;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(252, 12);
+            label9.Location = new Point(222, 14);
             label9.Name = "label9";
-            label9.Size = new Size(50, 20);
+            label9.Size = new Size(38, 15);
             label9.TabIndex = 3;
             label9.Text = "label9";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(179, 12);
+            label8.Location = new Point(157, 14);
             label8.Name = "label8";
-            label8.Size = new Size(62, 20);
+            label8.Size = new Size(50, 15);
             label8.TabIndex = 2;
             label8.Text = "Высота:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(79, 12);
+            label7.Location = new Point(72, 14);
             label7.Name = "label7";
-            label7.Size = new Size(50, 20);
+            label7.Size = new Size(38, 15);
             label7.TabIndex = 1;
             label7.Text = "label7";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(3, 12);
+            label6.Location = new Point(3, 14);
             label6.Name = "label6";
-            label6.Size = new Size(70, 20);
+            label6.Size = new Size(55, 15);
             label6.TabIndex = 0;
             label6.Text = "Ширина:";
             // 
@@ -284,9 +290,10 @@
             // 
             buttonAnim.Cursor = Cursors.Hand;
             buttonAnim.Font = new Font("Segoe UI", 9F);
-            buttonAnim.Location = new Point(27, 135);
+            buttonAnim.Location = new Point(24, 101);
+            buttonAnim.Margin = new Padding(3, 2, 3, 2);
             buttonAnim.Name = "buttonAnim";
-            buttonAnim.Size = new Size(195, 38);
+            buttonAnim.Size = new Size(180, 28);
             buttonAnim.TabIndex = 2;
             buttonAnim.Text = "Запустить анимацию";
             buttonAnim.UseVisualStyleBackColor = true;
@@ -296,9 +303,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F);
-            label4.Location = new Point(265, 86);
+            label4.Location = new Point(232, 64);
             label4.Name = "label4";
-            label4.Size = new Size(67, 20);
+            label4.Size = new Size(54, 15);
             label4.TabIndex = 7;
             label4.Text = "Центр Y:";
             // 
@@ -306,9 +313,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F);
-            label3.Location = new Point(263, 37);
+            label3.Location = new Point(230, 28);
             label3.Name = "label3";
-            label3.Size = new Size(68, 20);
+            label3.Size = new Size(54, 15);
             label3.TabIndex = 6;
             label3.Text = "Центр X:";
             // 
@@ -316,9 +323,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(30, 41);
+            label1.Location = new Point(26, 31);
             label1.Name = "label1";
-            label1.Size = new Size(71, 20);
+            label1.Size = new Size(57, 15);
             label1.TabIndex = 4;
             label1.Text = "Cторона:";
             // 
@@ -340,10 +347,11 @@
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(label4);
             groupBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            groupBox3.Location = new Point(546, 0);
+            groupBox3.Location = new Point(484, 5);
             groupBox3.Margin = new Padding(0);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(662, 186);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(579, 142);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
             groupBox3.Text = "Куб";
@@ -353,26 +361,27 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F);
-            label15.Location = new Point(263, 137);
+            label15.Location = new Point(230, 103);
             label15.Name = "label15";
-            label15.Size = new Size(68, 20);
+            label15.Size = new Size(54, 15);
             label15.TabIndex = 36;
             label15.Text = "Центр Z:";
             // 
             // numericUpDown20
             // 
-            numericUpDown20.Location = new Point(347, 135);
+            numericUpDown20.Location = new Point(304, 101);
+            numericUpDown20.Margin = new Padding(3, 2, 3, 2);
             numericUpDown20.Name = "numericUpDown20";
-            numericUpDown20.Size = new Size(90, 27);
+            numericUpDown20.Size = new Size(79, 23);
             numericUpDown20.TabIndex = 5;
             // 
             // label20
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 9F);
-            label20.Location = new Point(475, 137);
+            label20.Location = new Point(416, 103);
             label20.Name = "label20";
-            label20.Size = new Size(57, 20);
+            label20.Size = new Size(46, 15);
             label20.TabIndex = 27;
             label20.Text = "Угол Z:";
             // 
@@ -380,9 +389,9 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F);
-            label19.Location = new Point(475, 86);
+            label19.Location = new Point(416, 64);
             label19.Name = "label19";
-            label19.Size = new Size(56, 20);
+            label19.Size = new Size(46, 15);
             label19.TabIndex = 26;
             label19.Text = "Угол Y:";
             // 
@@ -390,60 +399,67 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 9F);
-            label18.Location = new Point(475, 39);
+            label18.Location = new Point(416, 29);
             label18.Name = "label18";
-            label18.Size = new Size(57, 20);
+            label18.Size = new Size(46, 15);
             label18.TabIndex = 25;
             label18.Text = "Угол X:";
             // 
             // numericUpDown6
             // 
-            numericUpDown6.Location = new Point(541, 135);
+            numericUpDown6.Location = new Point(473, 101);
+            numericUpDown6.Margin = new Padding(3, 2, 3, 2);
             numericUpDown6.Name = "numericUpDown6";
-            numericUpDown6.Size = new Size(90, 27);
+            numericUpDown6.Size = new Size(79, 23);
             numericUpDown6.TabIndex = 8;
             // 
             // numericUpDown5
             // 
-            numericUpDown5.Location = new Point(541, 84);
+            numericUpDown5.Location = new Point(473, 63);
+            numericUpDown5.Margin = new Padding(3, 2, 3, 2);
             numericUpDown5.Name = "numericUpDown5";
-            numericUpDown5.Size = new Size(90, 27);
+            numericUpDown5.Size = new Size(79, 23);
             numericUpDown5.TabIndex = 7;
             // 
             // numericUpDown4
             // 
-            numericUpDown4.Location = new Point(541, 35);
+            numericUpDown4.Location = new Point(473, 26);
+            numericUpDown4.Margin = new Padding(3, 2, 3, 2);
             numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(90, 27);
+            numericUpDown4.Size = new Size(79, 23);
             numericUpDown4.TabIndex = 6;
             // 
             // numericUpDown3
             // 
-            numericUpDown3.Location = new Point(347, 84);
+            numericUpDown3.Location = new Point(304, 63);
+            numericUpDown3.Margin = new Padding(3, 2, 3, 2);
             numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(90, 27);
+            numericUpDown3.Size = new Size(79, 23);
             numericUpDown3.TabIndex = 4;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(347, 35);
+            numericUpDown2.Location = new Point(304, 26);
+            numericUpDown2.Margin = new Padding(3, 2, 3, 2);
             numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(90, 27);
+            numericUpDown2.Size = new Size(79, 23);
             numericUpDown2.TabIndex = 3;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(147, 37);
+            numericUpDown1.Location = new Point(129, 28);
+            numericUpDown1.Margin = new Padding(3, 2, 3, 2);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(88, 27);
+            numericUpDown1.Size = new Size(77, 23);
             numericUpDown1.TabIndex = 1;
             // 
             // buttonCube
             // 
             buttonCube.Font = new Font("Segoe UI", 9F);
-            buttonCube.Location = new Point(30, 135);
+            buttonCube.Location = new Point(26, 101);
+            buttonCube.Margin = new Padding(3, 2, 3, 2);
             buttonCube.Name = "buttonCube";
-            buttonCube.Size = new Size(205, 38);
+            buttonCube.Size = new Size(180, 28);
             buttonCube.TabIndex = 2;
             buttonCube.Text = "Установить цвет";
             buttonCube.UseVisualStyleBackColor = true;
@@ -469,10 +485,11 @@
             groupBox4.Controls.Add(label21);
             groupBox4.Controls.Add(label22);
             groupBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            groupBox4.Location = new Point(546, 0);
+            groupBox4.Location = new Point(484, 5);
             groupBox4.Margin = new Padding(0);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(662, 186);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(579, 142);
             groupBox4.TabIndex = 4;
             groupBox4.TabStop = false;
             groupBox4.Text = "Конус";
@@ -482,43 +499,45 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F);
-            label2.Location = new Point(265, 137);
+            label2.Location = new Point(232, 103);
             label2.Name = "label2";
-            label2.Size = new Size(68, 20);
+            label2.Size = new Size(54, 15);
             label2.TabIndex = 35;
             label2.Text = "Центр Z:";
             // 
             // numericUpDown21
             // 
-            numericUpDown21.Location = new Point(347, 135);
+            numericUpDown21.Location = new Point(304, 101);
+            numericUpDown21.Margin = new Padding(3, 2, 3, 2);
             numericUpDown21.Name = "numericUpDown21";
-            numericUpDown21.Size = new Size(90, 27);
+            numericUpDown21.Size = new Size(79, 23);
             numericUpDown21.TabIndex = 6;
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 9F);
-            label23.Location = new Point(30, 86);
+            label23.Location = new Point(26, 64);
             label23.Name = "label23";
-            label23.Size = new Size(101, 20);
+            label23.Size = new Size(79, 15);
             label23.TabIndex = 29;
             label23.Text = "R основания:";
             // 
             // numericUpDown8
             // 
-            numericUpDown8.Location = new Point(145, 84);
+            numericUpDown8.Location = new Point(127, 63);
+            numericUpDown8.Margin = new Padding(3, 2, 3, 2);
             numericUpDown8.Name = "numericUpDown8";
-            numericUpDown8.Size = new Size(90, 27);
+            numericUpDown8.Size = new Size(79, 23);
             numericUpDown8.TabIndex = 2;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F);
-            label10.Location = new Point(474, 137);
+            label10.Location = new Point(415, 103);
             label10.Name = "label10";
-            label10.Size = new Size(57, 20);
+            label10.Size = new Size(46, 15);
             label10.TabIndex = 27;
             label10.Text = "Угол Z:";
             // 
@@ -526,9 +545,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F);
-            label11.Location = new Point(476, 86);
+            label11.Location = new Point(416, 64);
             label11.Name = "label11";
-            label11.Size = new Size(56, 20);
+            label11.Size = new Size(46, 15);
             label11.TabIndex = 26;
             label11.Text = "Угол Y:";
             // 
@@ -536,25 +555,27 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F);
-            label14.Location = new Point(474, 37);
+            label14.Location = new Point(415, 28);
             label14.Name = "label14";
-            label14.Size = new Size(57, 20);
+            label14.Size = new Size(46, 15);
             label14.TabIndex = 25;
             label14.Text = "Угол X:";
             // 
             // numericUpDown13
             // 
-            numericUpDown13.Location = new Point(541, 135);
+            numericUpDown13.Location = new Point(473, 101);
+            numericUpDown13.Margin = new Padding(3, 2, 3, 2);
             numericUpDown13.Name = "numericUpDown13";
-            numericUpDown13.Size = new Size(90, 27);
+            numericUpDown13.Size = new Size(79, 23);
             numericUpDown13.TabIndex = 9;
             // 
             // buttonCone
             // 
             buttonCone.Font = new Font("Segoe UI", 9F);
-            buttonCone.Location = new Point(30, 135);
+            buttonCone.Location = new Point(26, 101);
+            buttonCone.Margin = new Padding(3, 2, 3, 2);
             buttonCone.Name = "buttonCone";
-            buttonCone.Size = new Size(205, 38);
+            buttonCone.Size = new Size(180, 28);
             buttonCone.TabIndex = 3;
             buttonCone.Text = "Установить цвет";
             buttonCone.UseVisualStyleBackColor = true;
@@ -562,46 +583,51 @@
             // 
             // numericUpDown12
             // 
-            numericUpDown12.Location = new Point(541, 84);
+            numericUpDown12.Location = new Point(473, 63);
+            numericUpDown12.Margin = new Padding(3, 2, 3, 2);
             numericUpDown12.Name = "numericUpDown12";
-            numericUpDown12.Size = new Size(90, 27);
+            numericUpDown12.Size = new Size(79, 23);
             numericUpDown12.TabIndex = 8;
             // 
             // numericUpDown11
             // 
-            numericUpDown11.Location = new Point(541, 35);
+            numericUpDown11.Location = new Point(473, 26);
+            numericUpDown11.Margin = new Padding(3, 2, 3, 2);
             numericUpDown11.Name = "numericUpDown11";
-            numericUpDown11.Size = new Size(90, 27);
+            numericUpDown11.Size = new Size(79, 23);
             numericUpDown11.TabIndex = 7;
             // 
             // numericUpDown10
             // 
-            numericUpDown10.Location = new Point(347, 84);
+            numericUpDown10.Location = new Point(304, 63);
+            numericUpDown10.Margin = new Padding(3, 2, 3, 2);
             numericUpDown10.Name = "numericUpDown10";
-            numericUpDown10.Size = new Size(90, 27);
+            numericUpDown10.Size = new Size(79, 23);
             numericUpDown10.TabIndex = 5;
             // 
             // numericUpDown9
             // 
-            numericUpDown9.Location = new Point(347, 35);
+            numericUpDown9.Location = new Point(304, 26);
+            numericUpDown9.Margin = new Padding(3, 2, 3, 2);
             numericUpDown9.Name = "numericUpDown9";
-            numericUpDown9.Size = new Size(90, 27);
+            numericUpDown9.Size = new Size(79, 23);
             numericUpDown9.TabIndex = 4;
             // 
             // numericUpDown7
             // 
-            numericUpDown7.Location = new Point(145, 35);
+            numericUpDown7.Location = new Point(127, 26);
+            numericUpDown7.Margin = new Padding(3, 2, 3, 2);
             numericUpDown7.Name = "numericUpDown7";
-            numericUpDown7.Size = new Size(90, 27);
+            numericUpDown7.Size = new Size(79, 23);
             numericUpDown7.TabIndex = 1;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label16.Location = new Point(30, 37);
+            label16.Location = new Point(26, 28);
             label16.Name = "label16";
-            label16.Size = new Size(62, 20);
+            label16.Size = new Size(50, 15);
             label16.TabIndex = 4;
             label16.Text = "Высота:";
             // 
@@ -609,9 +635,9 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9F);
-            label21.Location = new Point(263, 37);
+            label21.Location = new Point(230, 28);
             label21.Name = "label21";
-            label21.Size = new Size(68, 20);
+            label21.Size = new Size(54, 15);
             label21.TabIndex = 6;
             label21.Text = "Центр X:";
             // 
@@ -619,103 +645,11 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 9F);
-            label22.Location = new Point(265, 86);
+            label22.Location = new Point(232, 64);
             label22.Name = "label22";
-            label22.Size = new Size(67, 20);
+            label22.Size = new Size(54, 15);
             label22.TabIndex = 7;
             label22.Text = "Центр Y:";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(checkedListBox1);
-            groupBox2.Controls.Add(buttonAnim);
-            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox2.Location = new Point(288, 0);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(250, 186);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Параметры";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(checkedListBox2);
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(280, 186);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Построить";
-            // 
-            // checkedListBox2
-            // 
-            checkedListBox2.CheckOnClick = true;
-            checkedListBox2.Cursor = Cursors.Hand;
-            checkedListBox2.Font = new Font("Segoe UI", 9F);
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Items.AddRange(new object[] { "куб", "конус", "система координат куба", "система координат конуса", "система координат сцены" });
-            checkedListBox2.Location = new Point(27, 35);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(224, 114);
-            checkedListBox2.TabIndex = 1;
-            checkedListBox2.ItemCheck += checkedListBox2_ItemCheck;
-            checkedListBox2.SelectedIndexChanged += checkedListBox2_SelectedIndexChanged;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = SystemColors.ControlDark;
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, инструкцияToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1232, 28);
-            menuStrip1.TabIndex = 28;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { открытьToolStripMenuItem, сохранитьToolStripMenuItem });
-            файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            файлToolStripMenuItem.Size = new Size(59, 24);
-            файлToolStripMenuItem.Text = "Файл";
-            // 
-            // открытьToolStripMenuItem
-            // 
-            открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            открытьToolStripMenuItem.Size = new Size(166, 26);
-            открытьToolStripMenuItem.Text = "Открыть";
-            открытьToolStripMenuItem.Click += открытьToolStripMenuItem_Click;
-            // 
-            // сохранитьToolStripMenuItem
-            // 
-            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            сохранитьToolStripMenuItem.Size = new Size(166, 26);
-            сохранитьToolStripMenuItem.Text = "Сохранить";
-            сохранитьToolStripMenuItem.Click += сохранитьToolStripMenuItem_Click;
-            // 
-            // инструкцияToolStripMenuItem
-            // 
-            инструкцияToolStripMenuItem.Name = "инструкцияToolStripMenuItem";
-            инструкцияToolStripMenuItem.Size = new Size(81, 24);
-            инструкцияToolStripMenuItem.Text = "Справка";
-            инструкцияToolStripMenuItem.Click += инструкцияToolStripMenuItem_Click;
-            // 
-            // timer1
-            // 
-            timer1.Tick += timer1_Tick;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(groupBox5);
-            panel1.Controls.Add(groupBox4);
-            panel1.Controls.Add(groupBox3);
-            panel1.Controls.Add(groupBox1);
-            panel1.Controls.Add(groupBox2);
-            panel1.Location = new Point(9, 31);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1213, 192);
-            panel1.TabIndex = 1;
             // 
             // groupBox5
             // 
@@ -732,10 +666,11 @@
             groupBox5.Controls.Add(label29);
             groupBox5.Controls.Add(label30);
             groupBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            groupBox5.Location = new Point(546, 0);
+            groupBox5.Location = new Point(484, 5);
             groupBox5.Margin = new Padding(0);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(662, 186);
+            groupBox5.Padding = new Padding(3, 2, 3, 2);
+            groupBox5.Size = new Size(579, 142);
             groupBox5.TabIndex = 5;
             groupBox5.TabStop = false;
             groupBox5.Text = "Сцена";
@@ -743,18 +678,19 @@
             // 
             // numericUpDown22
             // 
-            numericUpDown22.Location = new Point(130, 133);
+            numericUpDown22.Location = new Point(114, 100);
+            numericUpDown22.Margin = new Padding(3, 2, 3, 2);
             numericUpDown22.Name = "numericUpDown22";
-            numericUpDown22.Size = new Size(90, 27);
+            numericUpDown22.Size = new Size(79, 23);
             numericUpDown22.TabIndex = 3;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F);
-            label12.Location = new Point(30, 135);
+            label12.Location = new Point(26, 101);
             label12.Name = "label12";
-            label12.Size = new Size(68, 20);
+            label12.Size = new Size(54, 15);
             label12.TabIndex = 36;
             label12.Text = "Центр Z:";
             // 
@@ -762,9 +698,9 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 9F);
-            label24.Location = new Point(275, 135);
+            label24.Location = new Point(241, 101);
             label24.Name = "label24";
-            label24.Size = new Size(57, 20);
+            label24.Size = new Size(46, 15);
             label24.TabIndex = 27;
             label24.Text = "Угол Z:";
             // 
@@ -772,9 +708,9 @@
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 9F);
-            label25.Location = new Point(275, 86);
+            label25.Location = new Point(241, 64);
             label25.Name = "label25";
-            label25.Size = new Size(56, 20);
+            label25.Size = new Size(46, 15);
             label25.TabIndex = 26;
             label25.Text = "Угол Y:";
             // 
@@ -782,54 +718,59 @@
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 9F);
-            label26.Location = new Point(275, 33);
+            label26.Location = new Point(241, 25);
             label26.Name = "label26";
-            label26.Size = new Size(57, 20);
+            label26.Size = new Size(46, 15);
             label26.TabIndex = 25;
             label26.Text = "Угол X:";
             // 
             // numericUpDown18
             // 
-            numericUpDown18.Location = new Point(347, 135);
+            numericUpDown18.Location = new Point(304, 101);
+            numericUpDown18.Margin = new Padding(3, 2, 3, 2);
             numericUpDown18.Name = "numericUpDown18";
-            numericUpDown18.Size = new Size(90, 27);
+            numericUpDown18.Size = new Size(79, 23);
             numericUpDown18.TabIndex = 6;
             // 
             // numericUpDown17
             // 
-            numericUpDown17.Location = new Point(347, 84);
+            numericUpDown17.Location = new Point(304, 63);
+            numericUpDown17.Margin = new Padding(3, 2, 3, 2);
             numericUpDown17.Name = "numericUpDown17";
-            numericUpDown17.Size = new Size(90, 27);
+            numericUpDown17.Size = new Size(79, 23);
             numericUpDown17.TabIndex = 5;
             // 
             // numericUpDown16
             // 
-            numericUpDown16.Location = new Point(347, 35);
+            numericUpDown16.Location = new Point(304, 26);
+            numericUpDown16.Margin = new Padding(3, 2, 3, 2);
             numericUpDown16.Name = "numericUpDown16";
-            numericUpDown16.Size = new Size(90, 27);
+            numericUpDown16.Size = new Size(79, 23);
             numericUpDown16.TabIndex = 4;
             // 
             // numericUpDown15
             // 
-            numericUpDown15.Location = new Point(130, 84);
+            numericUpDown15.Location = new Point(114, 63);
+            numericUpDown15.Margin = new Padding(3, 2, 3, 2);
             numericUpDown15.Name = "numericUpDown15";
-            numericUpDown15.Size = new Size(90, 27);
+            numericUpDown15.Size = new Size(79, 23);
             numericUpDown15.TabIndex = 2;
             // 
             // numericUpDown14
             // 
-            numericUpDown14.Location = new Point(129, 35);
+            numericUpDown14.Location = new Point(113, 26);
+            numericUpDown14.Margin = new Padding(3, 2, 3, 2);
             numericUpDown14.Name = "numericUpDown14";
-            numericUpDown14.Size = new Size(90, 27);
+            numericUpDown14.Size = new Size(79, 23);
             numericUpDown14.TabIndex = 1;
             // 
             // label29
             // 
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 9F);
-            label29.Location = new Point(30, 37);
+            label29.Location = new Point(26, 28);
             label29.Name = "label29";
-            label29.Size = new Size(68, 20);
+            label29.Size = new Size(54, 15);
             label29.TabIndex = 6;
             label29.Text = "Центр X:";
             // 
@@ -837,24 +778,125 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Segoe UI", 9F);
-            label30.Location = new Point(30, 86);
+            label30.Location = new Point(26, 64);
             label30.Name = "label30";
-            label30.Size = new Size(67, 20);
+            label30.Size = new Size(54, 15);
             label30.TabIndex = 7;
             label30.Text = "Центр Y:";
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(checkedListBox1);
+            groupBox2.Controls.Add(buttonAnim);
+            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox2.Location = new Point(242, 5);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(235, 142);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Параметры";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(checkedListBox2);
+            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox1.Location = new Point(0, 5);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(235, 142);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Построить";
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.CheckOnClick = true;
+            checkedListBox2.Cursor = Cursors.Hand;
+            checkedListBox2.Font = new Font("Segoe UI", 9F);
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "куб", "конус", "система координат куба", "система координат конуса", "система координат сцены" });
+            checkedListBox2.Location = new Point(24, 26);
+            checkedListBox2.Margin = new Padding(3, 2, 3, 2);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(180, 94);
+            checkedListBox2.TabIndex = 1;
+            checkedListBox2.ItemCheck += checkedListBox2_ItemCheck;
+            checkedListBox2.SelectedIndexChanged += checkedListBox2_SelectedIndexChanged;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = SystemColors.ControlDark;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, инструкцияToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1084, 24);
+            menuStrip1.TabIndex = 28;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { открытьToolStripMenuItem, сохранитьToolStripMenuItem });
+            файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            файлToolStripMenuItem.Size = new Size(48, 20);
+            файлToolStripMenuItem.Text = "Файл";
+            // 
+            // открытьToolStripMenuItem
+            // 
+            открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
+            открытьToolStripMenuItem.Size = new Size(133, 22);
+            открытьToolStripMenuItem.Text = "Открыть";
+            открытьToolStripMenuItem.Click += открытьToolStripMenuItem_Click;
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            сохранитьToolStripMenuItem.Size = new Size(133, 22);
+            сохранитьToolStripMenuItem.Text = "Сохранить";
+            сохранитьToolStripMenuItem.Click += сохранитьToolStripMenuItem_Click;
+            // 
+            // инструкцияToolStripMenuItem
+            // 
+            инструкцияToolStripMenuItem.Name = "инструкцияToolStripMenuItem";
+            инструкцияToolStripMenuItem.Size = new Size(65, 20);
+            инструкцияToolStripMenuItem.Text = "Справка";
+            инструкцияToolStripMenuItem.Click += инструкцияToolStripMenuItem_Click;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(groupBox4);
+            panel1.Controls.Add(groupBox5);
+            panel1.Controls.Add(groupBox3);
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(groupBox2);
+            panel1.Location = new Point(10, 25);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1063, 151);
+            panel1.TabIndex = 1;
+            // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1232, 803);
+            ClientSize = new Size(1084, 761);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(openglControl1);
             Controls.Add(menuStrip1);
             KeyPreview = true;
             MainMenuStrip = menuStrip1;
-            MinimumSize = new Size(1250, 750);
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(1100, 700);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Моделирование объемных фигур";
@@ -887,11 +929,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown10).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown7).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            panel1.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown22).EndInit();
@@ -900,6 +937,11 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown16).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown15).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown14).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
